@@ -3,13 +3,14 @@
   or die("Error connecting to mysql server");
 
   $username = $_POST['username'];
-  $email = $_POST['email'];
   $password = $_POST['password'];
 
-  $query =  "INSERT INTO users(username , email, password) VALUES('$username', '$email', '$password')";
+    	
+
+  $query =  "SELECT * FROM users WHERE username ='$username' AND password = '$password')";
   $result = mysqli_query($dbc, $query ) or die("Error quering database");
+
 
 
   mysqli_close($dbc);
   echo "successfuly submited";
-  ?>
